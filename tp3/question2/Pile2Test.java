@@ -24,44 +24,56 @@ package question2;
  *          engagements, et suivi d'un appel à tearDown(), qui les détruit.
  */
 public class Pile2Test extends junit.framework.TestCase {
-	// Définissez ici les variables d'instance nécessaires à vos engagements;
-	// Vous pouvez également les saisir automatiquement du présentoir
-	// à l'aide du menu contextuel "Présentoir --> Engagements".
-	// Notez cependant que ce dernier ne peut saisir les objets primitifs
-	// du présentoir (les objets sans constructeur, comme int, float, etc.).
+    // Définissez ici les variables d'instance nécessaires à vos engagements;
+    // Vous pouvez également les saisir automatiquement du présentoir
+    // à l'aide du menu contextuel "Présentoir --> Engagements".
+    // Notez cependant que ce dernier ne peut saisir les objets primitifs
+    // du présentoir (les objets sans constructeur, comme int, float, etc.).
+    private PileI p1;
+    private PileI p2;
+    private PileI p3;
+    private PileI p4;
+    /**
+     * Constructeur de la classe-test Pile2Test
+     */
+    public Pile2Test() {
+    }
 
-	/**
-	 * Constructeur de la classe-test Pile2Test
-	 */
-	public Pile2Test() {
-	}
-
-	/**
-	 * Met en place les engagements.
-	 * 
-	 * Méthode appelée avant chaque appel de méthode de test.
-	 */
-	protected void setUp() // throws java.lang.Exception
-	{
-		// Initialisez ici vos engagements
-	}
-
-	/**
-	 * Supprime les engagements
-	 * 
-	 * Méthode appelée après chaque appel de méthode de test.
-	 */
-	protected void tearDown() // throws java.lang.Exception
-	{
-		// Libérez ici les ressources engagées par setUp()
-	}
-
-	/**
-	 * Il ne vous reste plus qu'à définir une ou plusieurs méthodes de test. Ces
-	 * méthodes doivent vérifier les résultats attendus à l'aide d'assertions
-	 * assertTrue(<boolean>). Par convention, leurs noms devraient débuter par
-	 * "test". Vous pouvez ébaucher le corps grâce au menu contextuel
-	 * "Enregistrer une méthode de test".
-	 */
+    /**
+     * Met en place les engagements.
+     * 
+     * Méthode appelée avant chaque appel de méthode de test.
+     */
+    protected void setUp() // throws java.lang.Exception
+    {
+        // Initialisez ici vos engagements
+    }
+        public void test_Pile_estVide() throws Exception {
+        PileI p = new question2.Pile2(3);
+        assertEquals(true, p.estVide());
+        try {
+            Object r = p.depiler();
+            fail("La pile est vide !");
+        } catch (Exception e) {
+            assertTrue(e instanceof question1.PileVideException);
+        }
+    }
+    /**
+     * Supprime les engagements
+     * 
+     * Méthode appelée après chaque appel de méthode de test.
+     */
+    protected void tearDown() // throws java.lang.Exception
+    {
+        // Libérez ici les ressources engagées par setUp()
+    }
+   
+    /**
+     * Il ne vous reste plus qu'à définir une ou plusieurs méthodes de test. Ces
+     * méthodes doivent vérifier les résultats attendus à l'aide d'assertions
+     * assertTrue(<boolean>). Par convention, leurs noms devraient débuter par
+     * "test". Vous pouvez ébaucher le corps grâce au menu contextuel
+     * "Enregistrer une méthode de test".
+     */
 
 }
